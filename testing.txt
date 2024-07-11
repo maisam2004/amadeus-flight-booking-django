@@ -5,3 +5,13 @@ set AMADEUS_HOSTNAME=test  # or "production" if you are using the production env
 $env:AMADEUS_CLIENT_ID="YOUR_API_KEY"
 $env:AMADEUS_CLIENT_SECRET="YOUR_API_SECRET"
 $env:AMADEUS_HOSTNAME="test"  # or "production" if you are using the production environment
+
+import environ (env file should be next to settings.py)
+
+import os
+
+# enviroment variable
+env = environ.Env()
+environ.Env.read_env()
+
+AMADEUS_CLIENT_ID = env('AMADEUS_CLIENT_ID')
