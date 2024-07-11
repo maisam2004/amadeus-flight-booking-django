@@ -11,14 +11,17 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from decouple import config
 
+import environ
 
 import os
 
 # enviroment variable
+env = environ.Env()
+environ.Env.read_env()
 
-AMADEUS_CLIENT_ID = config('AMADEUS_CLIENT_ID')
-AMADEUS_CLIENT_SECRET = config('AMADEUS_CLIENT_SECRET')
-AMADEUS_HOSTNAME = config('AMADEUS_HOSTNAME')
+AMADEUS_CLIENT_ID = env('AMADEUS_CLIENT_ID')
+AMADEUS_CLIENT_SECRET = env('AMADEUS_CLIENT_SECRET')
+AMADEUS_HOSTNAME = env('AMADEUS_HOSTNAME')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +31,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q77h6c^4l2fkcbfwnusbaas#()#mp48hj@_93o#h_+62u%%2t8'
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE', True)
