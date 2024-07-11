@@ -14,7 +14,7 @@ from decouple import config
 
 import os
 
- # enviroment variable
+# enviroment variable
 
 AMADEUS_CLIENT_ID = config('AMADEUS_CLIENT_ID')
 AMADEUS_CLIENT_SECRET = config('AMADEUS_CLIENT_SECRET')
