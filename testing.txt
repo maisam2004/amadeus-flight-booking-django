@@ -1,0 +1,7 @@
+set AMADEUS_CLIENT_ID=YOUR_API_KEY
+set AMADEUS_CLIENT_SECRET=YOUR_API_SECRET
+set AMADEUS_HOSTNAME=test  # or "production" if you are using the production environment
+
+$env:AMADEUS_CLIENT_ID="YOUR_API_KEY"
+$env:AMADEUS_CLIENT_SECRET="YOUR_API_SECRET"
+$env:AMADEUS_HOSTNAME="test"  # or "production" if you are using the production environment

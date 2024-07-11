@@ -9,8 +9,16 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
+from decouple import config
+
 
 import os
+
+ # enviroment variable
+
+AMADEUS_CLIENT_ID = config('AMADEUS_CLIENT_ID')
+AMADEUS_CLIENT_SECRET = config('AMADEUS_CLIENT_SECRET')
+AMADEUS_HOSTNAME = config('AMADEUS_HOSTNAME')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'demo'
 ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
